@@ -18,8 +18,8 @@ public class GhostControll : MonoBehaviour
     public float speed = 5;
     [Range(0f, 20f)]
     public float acceleration = 2;
-    [Range(0f, 20f)]
-    public float stopPower = 3;
+    [Range(0f, 40f)]
+    public float stopPower = 30;
 
     [Header("Graphics Settings")]
     public SpriteRenderer renderer;
@@ -41,6 +41,7 @@ public class GhostControll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeLeft = 20f;
         if (enableEditorDebug) Debug.Log("PlayerController.Start() is called.");
     }
 
@@ -51,7 +52,7 @@ public class GhostControll : MonoBehaviour
 
         // Get the time elapsed since last frame and decrease countdown accordingly.
         float timeElapsed = Time.deltaTime;
-        timeLeft -= timeElpased;
+        timeLeft -= timeElapsed;
         // Remove ghost from scene if there is no time left in countdown
         if (timeLeft <= 0) { ToggleOff(); }
 
@@ -86,11 +87,11 @@ public class GhostControll : MonoBehaviour
         }
 
         // Process horizontal speed.
-        if (leftPressed && !rightPressed)
+        if (leftPressed && !rightPressed && currentSpeedX <= 0)
         {
             currentSpeedX = Mathf.MoveTowards(currentSpeedX, -speed, acceleration * timeElapsed);
         }
-        else if (!leftPressed && rightPressed)
+        else if (!leftPressed && rightPressed && currentSpeedX >= 0)
         {
             currentSpeedX = Mathf.MoveTowards(currentSpeedX, speed, acceleration * timeElapsed);
         }
@@ -100,11 +101,11 @@ public class GhostControll : MonoBehaviour
         }
 
         // Process vertical speed.
-        if (upPressed && !downPressed)
+        if (upPressed && !downPressed && currentSpeedY >= 0)
         {
             currentSpeedY = Mathf.MoveTowards(currentSpeedY, speed, acceleration * timeElapsed);
         }
-        else if (!upPressed && downPressed)
+        else if (!upPressed && downPressed && currentSpeedY <= 0)
         {
             currentSpeedY = Mathf.MoveTowards(currentSpeedY, -speed, acceleration * timeElapsed);
         }
