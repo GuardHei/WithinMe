@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     public float ChangerTime;
     public float gravity = 5;
     [Range(0f, 5f)]
-    public float bot = .5f;
+    public float bot = .5f;//
 
     //Private vars
     private float SpeedX;
