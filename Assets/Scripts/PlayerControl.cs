@@ -161,7 +161,7 @@ public class PlayerControl : MonoBehaviour {
     public void loadSceneItself() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+  
     private IEnumerator ChangeColor(Color c, float i) {
         while (renderer.color != c) {
             renderer.color = Color.Lerp(renderer.color, c, i / 100);
