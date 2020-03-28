@@ -70,7 +70,7 @@ public class PlayerControl : MonoBehaviour {
 
         // Reloads the scene when pressing the resetKey.
         if (Input.GetKey(resetKey)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            loadSceneItself();
         }
 
         if (Input.GetKeyDown(toggleKey)) {
@@ -148,6 +148,18 @@ public class PlayerControl : MonoBehaviour {
         // Un-freeze the player.
         rigidbody.velocity = memorizeVelocity;
         ghostScript.toggleOff(true);
+    }
+
+    public void loadScene(int sceneBuildIndex) {
+        SceneManager.LoadScene(sceneBuildIndex);
+    }
+
+    public void loadScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void loadSceneItself() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private IEnumerator ChangeColor(Color c, float i) {
