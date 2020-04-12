@@ -6,13 +6,14 @@ public class Button : MonoBehaviour
 {
 
     #region button_vars
-    public bool active;
+    public bool activated;
     [SerializeField]
     [Tooltip("shows whether there is a timer or not")] 
     private bool timed;
-    private GameObject door;
     private Timer clock;
+    public GameObject device;
     #endregion
+
 
 
     #region button_func
@@ -20,18 +21,22 @@ public class Button : MonoBehaviour
     {
         if (timed)
         {
+            activated = true;
             clock.start_timer();
         }
         else
         {
-            active = !active;
+            activated = !activated;
+            if (device != null) { 
+            device.active = activated;
+            }
             /* test*/
         }
     }
 
     public void turn_off()
     {
-        active = false;
+        activated = false;
     }
     #endregion
 }
