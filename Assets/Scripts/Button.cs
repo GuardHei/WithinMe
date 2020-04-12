@@ -14,8 +14,6 @@ public class Button : MonoBehaviour
     public GameObject device;
     #endregion
 
-
-
     #region button_func
     public void interact()
     {
