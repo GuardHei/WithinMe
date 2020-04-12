@@ -489,6 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gasField: {fileID: 763866999}
+  interactKey: 102
 --- !u!1 &763866999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 681772287214167219, guid: 74051206e84fd47008cf2364d07dc65e,
@@ -675,12 +676,12 @@ PrefabInstance:
     - target: {fileID: 140908036892039341, guid: a9dc02d43d3fa40899093f0c0d750ecc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.58
+      value: -2.61
       objectReference: {fileID: 0}
     - target: {fileID: 140908036892039341, guid: a9dc02d43d3fa40899093f0c0d750ecc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 140908036892039341, guid: a9dc02d43d3fa40899093f0c0d750ecc,
         type: 3}
