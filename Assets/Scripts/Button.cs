@@ -13,7 +13,7 @@ public class Button : MonoBehaviour
     private Timer clock;
     public GameObject device;
     #endregion
-
+    
     #region button_func
     public void interact()
     {
