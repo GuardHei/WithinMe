@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Device : MonoBehaviour
@@ -46,14 +48,16 @@ public class Device : MonoBehaviour
         }
         if (m_timeactivated) {
             m_timedtimer -= Time.deltaTime;
+            GetComponentInChildren<TextMeshProUGUI>().text = $"{(int)Math.Round(m_timedtimer, 0)}";
             if (m_timedtimer <= 0) {
                 m_timeactivated = false;
                 for (int i = 0; i < m_beingActivated.Length; i++) {
-                    m_beingActivated[i].SetActive(m_beingActivated[i]);
+                    m_beingActivated[i].SetActive(m_initialActive[i]);
                 }
                 foreach (Button button in m_buttons) {
                     button.turnOff();
                 }
+                GetComponentInChildren<TextMeshProUGUI>().enabled = false;
             }
         }
     }
@@ -65,21 +69,22 @@ public class Device : MonoBehaviour
         if (m_timed && !m_timedOpened && !m_timeactivated) {
             m_timedtimer = m_timedDuration;
             m_timeactivated = true;
+            GetComponentInChildren<TextMeshProUGUI>().enabled = true;
         }
         foreach (Button button in m_buttons) {
-            Debug.Log($"{button.getActivated()} for {button.gameObject.name}");
             if (button.getActivated() == false) {
                 for (int i = 0; i < m_beingActivated.Length; i++) {
-                    m_beingActivated[i].SetActive(m_beingActivated[i]);
+                    m_beingActivated[i].SetActive(m_initialActive[i]);
                 }
                 return;
             }
         }
         for (int i = 0; i < m_beingActivated.Length; i++) {
-            m_beingActivated[i].SetActive(!m_beingActivated[i]);
+            m_beingActivated[i].SetActive(!m_initialActive[i]);
             if (m_timed && m_timedOpened) {
                 m_timedtimer = m_timedDuration;
                 m_timeactivated = true;
+                GetComponentInChildren<TextMeshProUGUI>().enabled = true;
             }
             else {
                 m_activated = true;

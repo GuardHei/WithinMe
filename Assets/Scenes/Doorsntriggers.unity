@@ -402,7 +402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319359267
 GameObject:
@@ -485,7 +485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1745995036
 GameObject:
@@ -517,9 +517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabe74d84f26c6744be938ffb9735108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 0
-  timed: 1
-  device: {fileID: 0}
+  m_device: {fileID: 0}
+  m_toggler: 0
+  m_pressure: 0
+  interactKey: 102
 --- !u!212 &1745995038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -614,9 +615,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabe74d84f26c6744be938ffb9735108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 0
-  timed: 0
-  device: {fileID: 1133670960}
+  m_device: {fileID: 0}
+  m_toggler: 0
+  m_pressure: 0
+  interactKey: 102
 --- !u!212 &1832725920
 SpriteRenderer:
   m_ObjectHideFlags: 0

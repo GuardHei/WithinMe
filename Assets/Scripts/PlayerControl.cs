@@ -45,6 +45,7 @@ public class PlayerControl : MonoBehaviour {
     [Range(0f, 5f)]
     public float bot = .5f;
     public bool is_in_light;
+    public bool can_use_ghost;
 
     [Header("Graphics Settings")]
     public SpriteRenderer renderer;
@@ -211,6 +212,9 @@ public class PlayerControl : MonoBehaviour {
 
     // Switch into the ghost state
     private void toggleOn() {
+        if (can_use_ghost == false) {
+            return;
+        }
         isInControl = false;
         // Memorize the current player's velocity and freeze the player.
         memorizeVelocity = rigidbody.velocity;

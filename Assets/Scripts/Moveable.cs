@@ -27,9 +27,10 @@ public class Moveable : MonoBehaviour
         {
             ghostControl = controller.gameObject.activeSelf;
         }
-
+        
         if (moveable || linked)
         {
+            
             if (Input.GetKeyDown(interactKey))
             {
                 EnableJoint();
@@ -66,8 +67,6 @@ public class Moveable : MonoBehaviour
         springJoint.enabled = true;
         springJoint.connectedBody = controller.GetComponent<Rigidbody2D>();
         linked = true;
-
-        Debug.Log("Pushing/Pulling");
     }
 
     // Disable Pulling and Pushing by Player
@@ -75,8 +74,7 @@ public class Moveable : MonoBehaviour
     {
         springJoint.connectedBody = null;
         springJoint.enabled = false;
-
-        Debug.Log("Released");
+        linked = false;
     }
 
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only)
@@ -87,8 +85,6 @@ public class Moveable : MonoBehaviour
         {
             moveable = true;
             controller = collision;
-
-            Debug.Log("Object Moveable by Player");
         }
 
         // Test if the collider object is the ghost control. If yes, allow interaction.
@@ -97,7 +93,6 @@ public class Moveable : MonoBehaviour
             moveable = true;
             controller = collision;
 
-            Debug.Log("Object Moveable by Ghost");
         }
     }
 
@@ -105,7 +100,5 @@ public class Moveable : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         moveable = false;
-
-        Debug.Log("Object No Longer Moveable");
     }
 }

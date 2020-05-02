@@ -17,7 +17,7 @@ public class GhostControl : MonoBehaviour {
 
     [Header("Game Settings")]
     [Range(1f, 100f)]
-    public float timeLimit = 20;
+    public float timeLimit;
 
     [Header("Graphics Settings")]
     public SpriteRenderer renderer;
@@ -116,6 +116,7 @@ public class GhostControl : MonoBehaviour {
     public void toggleOn() {
         // Set the ghost's position as the player's position
         transform.position = player.transform.position;
+        Debug.Log(!playerScript.is_in_light + "and" + m_isLightLevel);
         if (!playerScript.is_in_light && m_isLightLevel)
         {
             timeLeft = timeLimit / 4;

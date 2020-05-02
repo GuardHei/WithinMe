@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1570228736889737885}
   - component: {fileID: 1570228736889737884}
   m_Layer: 0
-  m_Name: Light Manager
+  m_Name: LightManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  darkness: {r: 0.2, g: 0.2, b: 0.2, a: 0.9019608}
+  darkness: {r: 0.2, g: 0.2, b: 0.2, a: 0.5882353}
   material: {fileID: 2100000, guid: e5782eae1a5aa45aca2b5d45a870367c, type: 2}
 --- !u!33 &1570228736889737885
 MeshFilter:
