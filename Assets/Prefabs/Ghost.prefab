@@ -216,9 +216,9 @@ MonoBehaviour:
   m_timerbar: {fileID: 329453940661964388}
   m_isLightLevel: 0
   speed: 5
-  acceleration: 2
+  acceleration: 1
   stopPower: 10
-  timeLimit: 20
+  timeLimit: 5
   renderer: {fileID: 329453941911284150}
   rigidbody: {fileID: 329453941911284149}
   currentSpeedX: 0
@@ -390,7 +390,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 07eab5bd2700b4230badb7f0727fac97, type: 3}
   m_Color: {r: 0.8679245, g: 0, b: 0, a: 1}
   m_FlipX: 0

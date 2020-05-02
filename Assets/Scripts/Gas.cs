@@ -22,7 +22,7 @@ public class Gas : MonoBehaviour
         m_timer = m_flickertimer;
         m_on = m_initial;
         GetComponent<SpriteRenderer>().enabled = m_initial;
-        GetComponent<BoxCollider2D>().enabled = m_initial;
+        GetComponent<CircleCollider2D>().enabled = m_initial;
     }
 
     private void Update() {
@@ -30,7 +30,7 @@ public class Gas : MonoBehaviour
             m_timer -= Time.deltaTime;
             if (m_timer <= 0) {
                 GetComponent<SpriteRenderer>().enabled = !m_on;
-                GetComponent<BoxCollider2D>().enabled = !m_on;
+                GetComponent<CircleCollider2D>().enabled = !m_on;
                 m_on = !m_on;
                 m_timer = m_flickertimer;
             }
@@ -43,9 +43,6 @@ public class Gas : MonoBehaviour
         if (collision.TryGetComponent(out PlayerControl player))
         {
             new PlayerControl().loadSceneItself();
-        } else
-        {
-            Destroy(this.gameObject);
         }
     }
 }
