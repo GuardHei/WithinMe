@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public void LevelSelect()
     {
         SceneManager.LoadScene(LevelSelection);
+        GameRecorder.StartTimer();
     }
     #endregion
 
