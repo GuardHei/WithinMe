@@ -5,15 +5,21 @@ using UnityEngine;
 public class Vent : MonoBehaviour
 {
     private bool opened, interactable;
+    private static AudioClip m_ventNoise;
 
     [Header("Key Setting")]
     public KeyCode interactKey = KeyCode.F;
+
+    void Awake() {
+        m_ventNoise = Resources.Load<AudioClip>("Vent");
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (interactable && Input.GetKeyDown(interactKey))
         {
+            GetComponent<AudioSource>().PlayOneShot(m_ventNoise);
             if (opened)
             {
                 transform.Rotate(0, 0, 90);
