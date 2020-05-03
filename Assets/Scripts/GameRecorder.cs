@@ -1,44 +1,35 @@
-﻿using UnityEngine;
+﻿﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class GameRecorder : MonoBehaviour {
-
-	private static GameRecorder instance;
-	private float _startTime;
-	private float _endTime;
-
-	public float RecordedTime => _endTime - _startTime;
+	
+	public static GameRecorder instance;
 
 	public int NumDeath {
 		get;
 		private set;
 	}
-	
+
+	public float timeStart;
+	public float timeStop;
+
 	private void Start() {
-		Application.targetFrameRate = 60;
-		
-		instance = this;
-		
 		DontDestroyOnLoad(this);
+		instance = this;
+		Application.targetFrameRate = 60;
 	}
 
-	public static void StartTimer() {
-		instance._startTime = Time.realtimeSinceStartup;
-		Debug.Log("Start Timer");
-	}
+	public static void StartTimer() => instance.timeStart = Time.realtimeSinceStartup;
 
-	public static void StopTimer() {
-		instance._endTime = Time.realtimeSinceStartup;
-		Debug.Log("Stop Timer");
-	}
+	public static void StopTimer() => instance.timeStop = Time.realtimeSinceStartup;
 
-	public static void RecordDeath() {
-		instance.NumDeath++;
-		Debug.Log("Record Death " + instance.NumDeath);
-	}
+	public static void RecordDeath() => instance.NumDeath += 1;
 
 	public static void Reset() {
-		instance._startTime = 0;
-		instance._endTime = 0;
+		instance.timeStart = 0;
+		instance.timeStop = 0;
 		instance.NumDeath = 0;
 	}
 }

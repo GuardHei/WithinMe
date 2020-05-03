@@ -20,6 +20,14 @@ public class MainMenu : MonoBehaviour
     }
     #endregion
 
+    public void StartTimer() {
+        GameRecorder.StartTimer();
+    }
+
+    public void Reset() {
+        GameRecorder.Reset();
+    }
+
     #region General Application Button Methods
     public void Quit()
     {

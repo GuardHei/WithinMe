@@ -242,6 +242,7 @@ public class PlayerControl : MonoBehaviour {
     }
 
     public void loadSceneItself() {
+        GameRecorder.RecordDeath();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
