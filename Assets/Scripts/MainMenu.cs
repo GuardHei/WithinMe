@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string nextScene;
-    public string LevelSelection;
+    public int LevelSelection;
     #region Play Buttons Methods
     public void LoadScene()
     {

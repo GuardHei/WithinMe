@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     [SerializeField]
-    private string m_sceneName;
+    private int m_scene;
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
-            SceneManager.LoadScene(m_sceneName);
+            SceneManager.LoadScene(m_scene);
         }
     }
 }
