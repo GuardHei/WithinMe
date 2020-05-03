@@ -42,7 +42,7 @@ public class Gas : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlayerControl player))
         {
-            new PlayerControl().loadSceneItself();
+            player.loadSceneItself();
         }
     }
 }
