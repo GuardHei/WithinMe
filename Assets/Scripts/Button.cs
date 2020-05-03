@@ -7,6 +7,8 @@ public class Button : MonoBehaviour
 
     #region Variables
     private bool m_Activated;
+    private static AudioClip m_buttonNoise;
+    private static AudioClip m_pressureNoise;
 
     [SerializeField]
     [Tooltip("Device")] 
@@ -28,11 +30,14 @@ public class Button : MonoBehaviour
 
     void Awake() {
         m_Activated = false;
+        m_buttonNoise = Resources.Load<AudioClip>("Button");
+        m_pressureNoise = Resources.Load<AudioClip>("Pressure");
     }
 
     // Update is called once per frame
     void Update() {
         if (interactable && Input.GetKeyDown(interactKey)) {
+            GetComponent<AudioSource>().PlayOneShot(m_buttonNoise);
             m_Activated = !m_Activated;
             if (m_toggler) {
                 m_device.toggle();
@@ -54,6 +59,7 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (m_pressure) {
             if (collision.CompareTag("Player") || collision.CompareTag("Crate")) {
+                GetComponent<AudioSource>().PlayOneShot(m_pressureNoise);
                 m_Activated = true;
                 m_device.checkDevice();
             }

@@ -7,6 +7,8 @@ public class GhostControl : MonoBehaviour {
     public GameObject m_timerbar;
     public bool m_isLightLevel;
 
+    private static AudioClip m_ghostNoise;
+
     [Header("Movement Settings")]
     [Range(0f, 20f)]
     public float speed = 5;
@@ -50,7 +52,6 @@ public class GhostControl : MonoBehaviour {
         rightKey = playerScript.rightKey;
         upKey = playerScript.upKey;
         downKey = playerScript.downKey;
-        
     }
 
     // Update is called once per frame
@@ -115,8 +116,8 @@ public class GhostControl : MonoBehaviour {
 
     public void toggleOn() {
         // Set the ghost's position as the player's position
+
         transform.position = player.transform.position;
-        Debug.Log(!playerScript.is_in_light + "and" + m_isLightLevel);
         if (!playerScript.is_in_light && m_isLightLevel)
         {
             timeLeft = timeLimit / 4;
@@ -125,9 +126,10 @@ public class GhostControl : MonoBehaviour {
         {
             timeLeft = timeLimit;
         }
-        Debug.Log(timeLeft);
         if (Camera.main != null) Camera.main.GetComponent<CameraController>().player = transform;
         gameObject.SetActive(true);
+        m_ghostNoise = Resources.Load<AudioClip>("Ghost");
+        GetComponent<AudioSource>().PlayOneShot(m_ghostNoise);
     }
 
     public void toggleOff(bool forced) {
