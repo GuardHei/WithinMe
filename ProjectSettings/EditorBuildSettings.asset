@@ -6,18 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/AlexScene.unity
-    guid: f5718b17d16356647b6b6f2899fda594
-  - enabled: 1
-    path: Assets/Scenes/AlexScene2.unity
-    guid: 447f876414efb434e99f21a1e9656418
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 174cd8413b18d4093868404bc4e4e83b
   - enabled: 1
-    path: Assets/Scenes/EndGame.unity
-    guid: 93de972fb1bc5415cb058911ee95010f
+    path: Assets/Scenes/StartLevel.unity
+    guid: 8122ac6e0cf554139a3a1ac98ca96491
+  - enabled: 1
+    path: Assets/Scenes/Tutorial1.unity
+    guid: 4a2785d21408948e9aec4a87f2f4c1e6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial2.unity
+    guid: d5491faacd8bd477fa4e648ee33dbbf4
+  - enabled: 1
+    path: Assets/Scenes/Easy1.unity
+    guid: a7ae60addc73e4b30a1672a067f76c2f
+  - enabled: 1
+    path: Assets/Scenes/Easy2.unity
+    guid: 9023ad4929dfe40938698da9e715ebb6
+  - enabled: 1
+    path: Assets/Scenes/LightTutorial.unity
+    guid: c2842211b3c55664d8f297f5321f2f73
+  - enabled: 1
+    path: Assets/Scenes/LightEasy1.unity
+    guid: 1dde69069df1e4c4dba64ad629edddac
+  - enabled: 1
+    path: Assets/Scenes/LightEasy2.unity
+    guid: 5ec04c79ea704594cb23c1fc949ed5aa
+  - enabled: 1
+    path: Assets/Scenes/1.unity
+    guid: 8865496768dc2ad4dbc6d7edf4f9f9fe
+  - enabled: 1
+    path: Assets/Scenes/2.unity
+    guid: 26216c34fc19bf64bbbf11a40f481276
+  - enabled: 1
+    path: Assets/Scenes/3.unity
+    guid: 29cbcf85996940e40bb326211dd5b98a
   m_configObjects: {}
